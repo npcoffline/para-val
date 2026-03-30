@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mensaje</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #ff4d6d;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            max-width: 80%;
+            text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+            animation: glow 2s infinite alternate;
+            z-index: 1;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff4d6d; }
+            to { text-shadow: 0 0 30px #ff4d6d; }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 6s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content
