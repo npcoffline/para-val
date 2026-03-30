@@ -17,8 +17,8 @@
         }
 
         h1 {
-            font-size: 30px;
-            max-width: 80%;
+            font-size: 28px;
+            max-width: 90%;
             text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
             animation: glow 2s infinite alternate;
             z-index: 1;
@@ -33,11 +33,67 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: red;
+            background: #ff4d6d;
             transform: rotate(45deg);
-            animation: float 6s linear infinite;
+            animation: subir 5s linear infinite;
         }
 
         .heart::before,
         .heart::after {
-            content
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff4d6d;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+Eres la niña más hermosa que conozco 💖<br>
+me encantan tus ojitos hermosos 🥺💘
+</h1>
+
+<script>
+    function crearCorazon() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    setInterval(crearCorazon, 250);
+</script>
+
+</body>
+</html>
